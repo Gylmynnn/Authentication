@@ -1,2 +1,6 @@
 .air.toml
 .env
+/.air.toml
+/.env
+.env.*
+.air.toml*
