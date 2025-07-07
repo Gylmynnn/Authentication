@@ -1,3 +1,4 @@
+import 'package:auth_bloc/core/constant/everblush_theme.dart';
 import 'package:auth_bloc/data/repository/auth_repository.dart';
 import 'package:auth_bloc/logic/auth/bloc/auth_bloc.dart';
 import 'package:auth_bloc/logic/auth/bloc/auth_event.dart';
@@ -22,10 +23,9 @@ class App extends StatelessWidget {
             ..add(AuthCheckStatus());
         },
         child: MaterialApp(
-          title: 'Auth with bloc',
-          theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          ),
+          debugShowCheckedModeBanner: false,
+          title: 'Authentication with bloc state',
+          theme: everblushTheme,
           home: LoginPage(),
         ),
       ),
