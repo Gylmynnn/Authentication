@@ -1,1 +1,28 @@
 @import 'tailwindcss';
+@import '@fontsource-variable/lexend';
+
+@theme {
+  --color-blush-black: #222A2D;
+  --color-blush-background: #141b1e;
+  --color-blush-foreground: #dadada;
+  --color-blush-red: #e57474;
+  --color-blush-green: #8ccf7e;
+  --color-blush-yellow: #e5c76b;
+  --color-blush-blue: #67b0e8;
+  --color-blush-purple: #c47fd5;
+  --color-blush-cyan: #6cbfbf;
+  --color-blush-orange: #f09483;
+}
+
+body {
+  font-family: 'Lexend Variable', sans-serif;
+  background-color: var(--color-blush-background) 
+}
+
+label {
+    color: var(--color-blush-foreground) 
+}
+
+p, h1, h2, h3, h4, h5 {
+    color: var(--color-blush-foreground) 
+}
