@@ -10,13 +10,18 @@ import (
 )
 
 func main() {
-	config.LoadEnv()
-	database.InitDB()
+	if err := config.LoadEnv(); err != nil {
+		log.Println("peringatan : file .env tidak dapat ditemukan")
+	}
+	log.Println("info : file .env berhasil dimuat")
+	if err := database.InitDB(); err != nil {
+		log.Println("peringatan : gagal terkoneksi dengan database", err.Error())
+	}
 
 	r := router.InitRoutes()
-	err := r.Run(":" + config.GetEnv("APP_PORT", "3000"))
-	if err != nil {
+	if err := r.Run(":" + config.GetEnv("APP_PORT", "3000")); err != nil {
 		log.Fatal("peringatan : gagal menjalankan server")
 	}
+
 	fmt.Println("server berjalan pada port : 3000")
 }

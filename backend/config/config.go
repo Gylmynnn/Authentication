@@ -1,17 +1,16 @@
 package config
 
 import (
-	"log"
 	"os"
+
 	"github.com/joho/godotenv"
 )
 
-func LoadEnv() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Println("peringatan : file .env tidak dapat ditemukan")
+func LoadEnv() error {
+	if err := godotenv.Load(); err != nil {
+		return err
 	}
-	log.Println("info : file .env berhasil dimuat")
+	return nil
 }
 
 func GetEnv(key, defaultValue string) string {
