@@ -1,4 +1,4 @@
-```
+```json
 "tech" : {
     "backend" : "golang",
     "frontend" : {
